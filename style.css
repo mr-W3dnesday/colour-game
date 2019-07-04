@@ -1,0 +1,28 @@
+body{
+    background-color: #232323;
+}
+
+.square{
+    width: 30%;
+    padding-top: 30%;
+    float: left;
+    margin: 1.66%;
+}
+
+#container{
+    width: 600px;
+    margin: 0 auto;
+}
+
+h1{
+    color: white;
+}
+
+.wrongGuess{
+    opacity: 0;
+    transition: 500ms;
+}
+
+#userFeedbackMsg{
+    color: white;
+}
