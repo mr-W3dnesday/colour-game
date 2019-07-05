@@ -1,5 +1,14 @@
 body{
     background-color: #232323;
+    margin: 0;
+    font-family: 'Montserrat','Asap';
+    font-weight: 400;
+}
+
+#stripe{
+    background-color: white;
+    text-align: center;
+    height: 30px;
 }
 
 .square{
@@ -7,22 +16,64 @@ body{
     padding-top: 30%;
     float: left;
     margin: 1.66%;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    border-radius: 15%;
 }
 
 #container{
     width: 600px;
-    margin: 0 auto;
+    margin: 10px auto;
+}
+
+.selected{
+    background-color: steelblue;
+    color:white;
 }
 
 h1{
     color: white;
+    text-align: center;
+    background-color: steelblue;
+    margin: 0;
+    text-transform: uppercase;
+    line-height: 1.1;
+    padding: 20px 0;
+    transition: background-color 0.4s;
+    -webkit-transition: background-color 0.4s;
+    -moz-transition: background-color 0.4s;
+}
+
+#rgbDisplay{
+    font-size: 3.4rem;
 }
 
 .wrongGuess{
     opacity: 0;
-    transition: 500ms;
+}
+
+button{
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    outline: none;
+}
+
+button:hover{
+    color: white;
+    background-color: steelblue;
 }
 
 #userFeedbackMsg{
-    color: white;
+    display: inline-block;
+    width: 20%;
 }
