@@ -1,2 +1,2 @@
 # colour-game
-My first major front end development app
+My first front end development app
