@@ -21,7 +21,9 @@ function rgbRandom(){
 }
 
 function guess(){
+    if (!gameOver){
         this.style.backgroundColor === correctColour ? finalGuess('Correct'): wrongGuess(this);
+    }
 }
 
 function wrongGuess(i){
