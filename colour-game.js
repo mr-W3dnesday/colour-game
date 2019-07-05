@@ -11,27 +11,18 @@ function rgbRandom(){
 }
 
 function guess(){
-    if (!gameOver){
-        if (this.style.backgroundColor === correctColour){
-            finalGuess('Correct');
-        }
-        else{
-            wrongGuess(this);
-        }
-    }
+        this.style.backgroundColor === correctColour ? finalGuess('Correct'): wrongGuess(this);
 }
 
 function wrongGuess(i){
     i.classList.add('wrongGuess');
     userFeedbackMsg.textContent = 'Try Again';
     guessCount += 1;
-
     // changes game difficulty
     if (guessCount === 3){
         finalGuess('Out Of Guesses');
     }
 }
-
 
 function finalGuess(msg){
     userFeedbackMsg.textContent = msg;
@@ -44,7 +35,7 @@ function finalGuess(msg){
     resetBtn.textContent = 'Play Again';
 }
 
-// add 6 colours to array and select winning colour
+// resets game state. Picks all colours and winner, resets variables
 function pickColours(){
     squareColours = [];
     gameOver = false;
@@ -72,10 +63,6 @@ function pickColours(){
         correctColour = squareColours[randInt(2)];
         rgbDisplay.textContent = correctColour;
     }
-}
-
-function resetGame(){
-    pickColours();
     guessCount = 0;
     resetBtn.textContent = 'New Colours';
     userFeedbackMsg.textContent = 'Guess the Colour';
@@ -100,12 +87,12 @@ allSquares.forEach(function(i){
     i.addEventListener('click',guess);
 })
 resetBtn.addEventListener('click',function(){
-    resetGame();
+    pickColours();
 })
 easyBtn.addEventListener('click',function(){
     if (highDifficulty){
         highDifficulty = false;
-        resetGame();
+        pickColours();
         easyBtn.classList.add('selected');
         hardBtn.classList.remove('selected');
     }
@@ -113,7 +100,7 @@ easyBtn.addEventListener('click',function(){
 hardBtn.addEventListener('click',function(){
     if (!highDifficulty){
         highDifficulty = true;
-        resetGame();
+        pickColours();
         hardBtn.classList.add('selected');
         easyBtn.classList.remove('selected');
     }
