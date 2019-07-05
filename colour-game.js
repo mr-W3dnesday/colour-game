@@ -13,7 +13,7 @@ function rgbRandom(){
 function guess(){
     if (!gameOver){
         if (this.style.backgroundColor === correctColour){
-            finalGuess('Correct!');
+            finalGuess('Correct');
         }
         else{
             wrongGuess(this);
@@ -23,12 +23,12 @@ function guess(){
 
 function wrongGuess(i){
     i.classList.add('wrongGuess');
-    userFeedbackMsg.textContent = 'Try Again.';
+    userFeedbackMsg.textContent = 'Try Again';
     guessCount += 1;
-    
+
     // changes game difficulty
     if (guessCount === 3){
-        finalGuess('Out Of Guesses!');
+        finalGuess('Out Of Guesses');
     }
 }
 
@@ -41,7 +41,7 @@ function finalGuess(msg){
         i.style.backgroundColor = correctColour;
     })
     heading.style.backgroundColor = correctColour;
-    resetBtn.textContent = 'Play Again?';
+    resetBtn.textContent = 'Play Again';
 }
 
 // add 6 colours to array and select winning colour
@@ -78,7 +78,7 @@ function resetGame(){
     pickColours();
     guessCount = 0;
     resetBtn.textContent = 'New Colours';
-    userFeedbackMsg.textContent = 'Guess the Colour!';
+    userFeedbackMsg.textContent = 'Guess the Colour';
 }
 
 // setup steps
