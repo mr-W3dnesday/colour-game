@@ -1,3 +1,13 @@
+// initialisation steps
+var highDifficulty = true;
+var allSquares = document.querySelectorAll('.square');
+var heading = document.querySelector('h1');
+var rgbDisplay = document.getElementById('rgbDisplay');
+var userFeedbackMsg = document.getElementById('userFeedbackMsg');
+var resetBtn = document.getElementById('resetBtn');
+var easyBtn = document.getElementById('easyBtn');
+var hardBtn = document.getElementById('hardBtn');
+
 function randInt(num){
     return Math.round(Math.random() * num);
 }
@@ -39,6 +49,7 @@ function finalGuess(msg){
 function pickColours(){
     squareColours = [];
     gameOver = false;
+    guessCount = 0;
     if (highDifficulty){
         for (i = 0; i < allSquares.length; i++){
             allSquares[i].style.display = 'block'
@@ -63,24 +74,9 @@ function pickColours(){
         correctColour = squareColours[randInt(2)];
         rgbDisplay.textContent = correctColour;
     }
-    guessCount = 0;
     resetBtn.textContent = 'New Colours';
     userFeedbackMsg.textContent = 'Guess the Colour';
 }
-
-// setup steps
-var squareColours = [];
-var highDifficulty = true;
-var gameOver = false;
-var guessCount = 0;
-var allSquares = document.querySelectorAll('.square');
-var heading = document.querySelector('h1');
-var rgbDisplay = document.getElementById('rgbDisplay');
-var userFeedbackMsg = document.getElementById('userFeedbackMsg');
-var resetBtn = document.getElementById('resetBtn');
-var easyBtn = document.getElementById('easyBtn');
-var hardBtn = document.getElementById('hardBtn');
-var correctColour;
 
 // click listeners
 allSquares.forEach(function(i){
@@ -106,5 +102,4 @@ hardBtn.addEventListener('click',function(){
     }
 
 })
-
 pickColours();
