@@ -1,5 +1,5 @@
 function randInt(num){
-    return Math.floor(Math.random() * num + 1);
+    return Math.round(Math.random() * num);
 }
 
 function rgbRandom(){
@@ -13,7 +13,7 @@ function rgbRandom(){
 function guess(){
     if (!gameOver){
         if (this.style.backgroundColor === correctColour){
-            correctGuess();
+            finalGuess('Correct!');
         }
         else{
             wrongGuess(this);
@@ -24,11 +24,17 @@ function guess(){
 function wrongGuess(i){
     i.classList.add('wrongGuess');
     userFeedbackMsg.textContent = 'Try Again.';
+    guessCount += 1;
+    
+    // changes game difficulty
+    if (guessCount === 3){
+        finalGuess('Out Of Guesses!');
+    }
 }
 
 
-function correctGuess(){
-    userFeedbackMsg.textContent = 'Correct!';
+function finalGuess(msg){
+    userFeedbackMsg.textContent = msg;
     gameOver = true;
     allSquares.forEach(function(i){
         i.classList.remove('wrongGuess');
@@ -70,6 +76,7 @@ function pickColours(){
 
 function resetGame(){
     pickColours();
+    guessCount = 0;
     resetBtn.textContent = 'New Colours';
     userFeedbackMsg.textContent = 'Guess the Colour!';
 }
@@ -78,6 +85,7 @@ function resetGame(){
 var squareColours = [];
 var highDifficulty = true;
 var gameOver = false;
+var guessCount = 0;
 var allSquares = document.querySelectorAll('.square');
 var heading = document.querySelector('h1');
 var rgbDisplay = document.getElementById('rgbDisplay');
