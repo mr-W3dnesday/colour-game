@@ -1,30 +1,28 @@
 body{
-    background-color: #232323;
-    margin: 0;
     font-family: 'Montserrat','Raleway';
     font-weight: 300;
+    background-color: #232323;
+    height: 100vh;
 }
 
-#stripe{
-    background-color: white;
-    text-align: center;
-    height: 30px;
+html{
+    color: #232323;
+    min-height: 100vh;
+}
+
+#background{
+    background-color: #232323;
 }
 
 .square{
-    width: 30%;
-    padding-top: 30%;
-    float: left;
-    margin: 1.66%;
+    width: 90%;
+    padding-top: 90%;
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
     border-radius: 15%;
-}
-
-#container{
-    width: 600px;
-    margin: 10px auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .selected{
@@ -32,14 +30,12 @@ body{
     color:white;
 }
 
-h1{
+h2{
     color: white;
     text-align: center;
     background-color: steelblue;
-    margin: 0;
     text-transform: uppercase;
     line-height: 1.1;
-    padding: 20px 0;
     transition: background-color 0.4s;
     -webkit-transition: background-color 0.4s;
     -moz-transition: background-color 0.4s;
@@ -55,9 +51,9 @@ h1{
 
 button{
     border: none;
+    outline: none!important;
     background: none;
     text-transform: uppercase;
-    height: 100%;
     font-weight: 700;
     color: steelblue;
     letter-spacing: 1px;
@@ -65,15 +61,9 @@ button{
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
     -moz-transition: all 0.4s;
-    outline: none;
 }
 
 button:hover{
     color: white;
     background-color: steelblue;
-}
-
-#userFeedbackMsg{
-    display: inline-block;
-    width: 20%;
 }
